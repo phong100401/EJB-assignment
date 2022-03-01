@@ -1,0 +1,41 @@
+body {
+    background: aliceblue;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background: white;
+    height: complex;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#sidebar {
+    position: fixed;
+    height: 100%;
+}
+
+
+#sidebar header {
+    font-size: 18px;
+    font-family: Arial;
+    text-align: center;
+}
+
+#btn-submit {
+    margin-left: 400px;
+    width: 150px;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    padding-left: 15px;
+}
