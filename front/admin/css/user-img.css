@@ -1,0 +1,11 @@
+.user-img{
+    position: absolute;
+    height: 27px;
+    width: 27px;
+    object-fit: cover;
+    left: -7%;
+    top: -12%;
+}
+.btn-rounded{
+    border-radius: 50px;
+}
