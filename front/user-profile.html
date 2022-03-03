@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" href="css/index.css">
-    <title>Transaction History</title>
+    <title>User Profile</title>
 </head>
 
 <body>
@@ -41,15 +41,15 @@
 <div id="sidebar">
     <div class="w3-sidebar w3-bar-block w3-light-grey" style="width:200px;">
         <header>
-            <button class="w3-button w3-block" style="border: 1px solid black; border-radius: 4px" onclick="myAccFunc()">
-                User <i class="fa fa-caret-down"></i>
-            </button>
+        <button class="w3-button w3-block" style="border: 1px solid black; border-radius: 4px" onclick="myAccFunc()">
+            User <i class="fa fa-caret-down"></i>
+        </button>
         </header>
         <div id="demoAcc" class="w3-hide w3-white w3-card">
-            <a href="profile.html" class="w3-bar-item w3-button"> Profile</a>
-            <a href="loan.html" class="w3-bar-item w3-button">Get Loan</a>
-            <a href="transfer.html" class="w3-bar-item w3-button">Transfer</a>
-            <a href="history.html" class="w3-bar-item w3-button">Transaction History</a>
+            <a href="user-profile.html" class="w3-bar-item w3-button"> Profile</a>
+            <a href="user-loan.html" class="w3-bar-item w3-button">Get Loan</a>
+            <a href="user-transfer.html" class="w3-bar-item w3-button">Transfer</a>
+            <a href="user-history.html" class="w3-bar-item w3-button">Transaction History</a>
         </div>
     </div>
 </div>
@@ -57,25 +57,19 @@
 
 <main class="main" style="margin-left: 200px">
     <div class="homepage" style="padding: 20px">
-        <table style="width: 100%; height: 100px">
-            <tr>
-                <th style="width: 10%">Date</th>
-                <th style="width: 30%">Transaction Type</th>
-                <th style="width: 30%">Description</th>
-                <th style="width: 15%">Transfer Amount</th>
-                <th style="width: 15%">Account Balance</th>
-            </tr>
-            <tr>
-                <td>01/03/2022</td>
-                <td>Transfer</td>
-                <td>Transfer money from 0123**** to 0112****</td>
-                <td>500.000</td>
-                <td>2.500.000</td>
-            </tr>
-        </table>
+        <h2 style="margin-left:30px">User Profile</h2>
+        <br>
+        <h4>Account Number:</h4>
+        <br>
+        <h4>Name: </h4>
+        <br>
+        <h4>Address: </h4>
+        <br>
+        <h4>Email: </h4>
+        <br>
+        <h4>Phone: </h4>
     </div>
 </main>
 <script src="js/sidebar.js"></script>
-<script src="js/validate.js"></script>
 </body>
 </html>

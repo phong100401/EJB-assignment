@@ -46,10 +46,10 @@
             </button>
         </header>
         <div id="demoAcc" class="w3-hide w3-white w3-card">
-            <a href="profile.html" class="w3-bar-item w3-button"> Profile</a>
-            <a href="loan.html" class="w3-bar-item w3-button">Get Loan</a>
-            <a href="transfer.html" class="w3-bar-item w3-button">Transfer</a>
-            <a href="history.html" class="w3-bar-item w3-button">Transaction History</a>
+            <a href="user-profile.html" class="w3-bar-item w3-button"> Profile</a>
+            <a href="user-loan.html" class="w3-bar-item w3-button">Get Loan</a>
+            <a href="user-transfer.html" class="w3-bar-item w3-button">Transfer</a>
+            <a href="user-history.html" class="w3-bar-item w3-button">Transaction History</a>
         </div>
     </div>
 </div>
@@ -58,8 +58,8 @@
 <main class="main" style="margin-left: 200px">
     <div class="homepage" style="padding: 20px">
         <form name="loan-form" action="action_page.php"
-              class="w3-container w3-card-4 w3-light-grey w3-margin" style="width: 1000px">
-            <h2 class="w3-center" style="margin-top: 20px">Transfer Money</h2>
+            class="w3-container w3-card-4 w3-light-grey w3-margin" style="width: 1000px">
+            <h2 class="w3-center" style="margin-top: 20px">Get Loan</h2>
 
             <div class="w3-row w3-section" style="margin-left: 50px">
                 <div class="col" style="width: 50px; margin-bottom: 10px">
@@ -71,38 +71,47 @@
             </div>
 
             <div class="w3-row w3-section" style="margin-left: 50px">
-                <div class="col" style="width: 200px; margin-bottom: 10px">
-                    <label>Account Number: </label>
+                <div class="col" style="width: 50px; margin-bottom: 10px">
+                    <label>Address: </label>
                 </div>
                 <div class="w3-rest">
-                    <input class="w3-input w3-border" style="width: 500px" name="account" type="text" placeholder="Account Number">
+                    <input class="w3-input w3-border" style="width: 500px" name="address" type="text" placeholder="Address">
                 </div>
             </div>
 
             <div class="w3-row w3-section" style="margin-left: 50px">
-                <div class="col" style="width: 200px; margin-bottom: 10px">
-                    <label>Beneficiary Account Number: </label>
+                <div class="col" style="width: 50px; margin-bottom: 10px">
+                    <label>Email: </label>
                 </div>
                 <div class="w3-rest">
-                    <input class="w3-input w3-border" style="width: 500px" name="beneficiary" type="text" placeholder="Beneficiary Number">
+                    <input class="w3-input w3-border" style="width: 500px" name="email" type="text" placeholder="Email">
                 </div>
             </div>
 
             <div class="w3-row w3-section" style="margin-left: 50px">
-                <div class="col" style="width: 200px; margin-bottom: 10px">
-                    <label>Transfer Amount: </label>
+                <div class="col" style="width: 50px; margin-bottom: 10px">
+                    <label>Phone: </label>
                 </div>
                 <div class="w3-rest">
-                    <input class="w3-input w3-border" onkeypress="validate(event)" style="width: 500px" name="transfer" type="text" placeholder="Transfer Amount (VND)">
+                    <input class="w3-input w3-border" style="width: 500px" name="phone" type="text" placeholder="Phone Number">
+                </div>
+            </div>
+
+            <div class="w3-row w3-section" style="margin-left: 50px">
+                <div class="col" style="width: 100px; margin-bottom: 10px">
+                    <label>Loan Amount: </label>
+                </div>
+                <div class="w3-rest">
+                    <input class="w3-input w3-border" onkeypress="validate(event)" style="width: 500px" name="loan" type="text" placeholder="Loan Amount (VND)">
                 </div>
             </div>
 
             <div class="w3-row w3-section" style="margin-left: 50px">
                 <div class="col" style="width: 150px; margin-bottom: 10px">
-                    <label>Reason for Transfer: </label>
+                    <label>Reason for Loan: </label>
                 </div>
                 <div class="w3-rest">
-                    <textarea class="w3-input w3-border" style="width: 500px" name="reasonTransfer" placeholder="Reason for Transfer"></textarea>
+                    <textarea class="w3-input w3-border" style="width: 500px" name="reason" placeholder="Reason for Loan"></textarea>
                 </div>
             </div>
 
