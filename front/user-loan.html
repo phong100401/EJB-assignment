@@ -62,42 +62,6 @@
             <h2 class="w3-center" style="margin-top: 20px">Get Loan</h2>
 
             <div class="w3-row w3-section" style="margin-left: 50px">
-                <div class="col" style="width: 50px; margin-bottom: 10px">
-                    <label>Name: </label>
-                </div>
-                <div class="w3-rest">
-                    <input class="w3-input w3-border" style="width: 500px" name="name" type="text" placeholder="Client Name">
-                </div>
-            </div>
-
-            <div class="w3-row w3-section" style="margin-left: 50px">
-                <div class="col" style="width: 50px; margin-bottom: 10px">
-                    <label>Address: </label>
-                </div>
-                <div class="w3-rest">
-                    <input class="w3-input w3-border" style="width: 500px" name="address" type="text" placeholder="Address">
-                </div>
-            </div>
-
-            <div class="w3-row w3-section" style="margin-left: 50px">
-                <div class="col" style="width: 50px; margin-bottom: 10px">
-                    <label>Email: </label>
-                </div>
-                <div class="w3-rest">
-                    <input class="w3-input w3-border" style="width: 500px" name="email" type="text" placeholder="Email">
-                </div>
-            </div>
-
-            <div class="w3-row w3-section" style="margin-left: 50px">
-                <div class="col" style="width: 50px; margin-bottom: 10px">
-                    <label>Phone: </label>
-                </div>
-                <div class="w3-rest">
-                    <input class="w3-input w3-border" style="width: 500px" name="phone" type="text" placeholder="Phone Number">
-                </div>
-            </div>
-
-            <div class="w3-row w3-section" style="margin-left: 50px">
                 <div class="col" style="width: 100px; margin-bottom: 10px">
                     <label>Loan Amount: </label>
                 </div>
@@ -107,20 +71,30 @@
             </div>
 
             <div class="w3-row w3-section" style="margin-left: 50px">
-                <div class="col" style="width: 150px; margin-bottom: 10px">
-                    <label>Reason for Loan: </label>
+                <div class="col" style="width: 50px; margin-bottom: 10px">
+                    <label>Rate: </label>
                 </div>
                 <div class="w3-rest">
-                    <textarea class="w3-input w3-border" style="width: 500px" name="reason" placeholder="Reason for Loan"></textarea>
+                    <input class="w3-input w3-border" style="width: 500px" name="rate" type="text" placeholder="Rate (%)">
                 </div>
             </div>
 
-            <button type="button" id="btn-submit" class="w3-button w3-section w3-blue w3-ripple w3-padding">Submit</button>
+            <div class="w3-row w3-section" style="margin-left: 50px">
+                <div class="col" style="width: 50px; margin-bottom: 10px">
+                    <label>Tenure: </label>
+                </div>
+                <div class="w3-rest">
+                    <input class="w3-input w3-border" style="width: 500px" name="tenure" type="text" placeholder="Tenure (Months)">
+                </div>
+            </div>
+
+            <button type="button" id="btn-submit2" class="w3-button w3-section w3-blue w3-ripple w3-padding">Submit</button>
 
         </form>
     </div>
 </main>
 <script src="js/sidebar.js"></script>
 <script src="js/validate.js"></script>
+<script src="js/user-loan.js"></script>
 </body>
 </html>

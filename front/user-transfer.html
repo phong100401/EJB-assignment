@@ -57,34 +57,34 @@
 
 <main class="main" style="margin-left: 200px">
     <div class="homepage" style="padding: 20px">
-        <form name="loan-form" action="action_page.php"
+        <form name="transfer-form" action="action_page.php"
               class="w3-container w3-card-4 w3-light-grey w3-margin" style="width: 1000px">
             <h2 class="w3-center" style="margin-top: 20px">Transfer Money</h2>
 
+<!--            <div class="w3-row w3-section" style="margin-left: 50px">-->
+<!--                <div class="col" style="width: 50px; margin-bottom: 10px">-->
+<!--                    <label>Name: </label>-->
+<!--                </div>-->
+<!--                <div class="w3-rest">-->
+<!--                    <input class="w3-input w3-border" style="width: 500px" name="name" type="text" placeholder="Client Name">-->
+<!--                </div>-->
+<!--            </div>-->
+
             <div class="w3-row w3-section" style="margin-left: 50px">
-                <div class="col" style="width: 50px; margin-bottom: 10px">
+                <div class="col" style="width: 200px; margin-bottom: 10px">
                     <label>Name: </label>
                 </div>
                 <div class="w3-rest">
-                    <input class="w3-input w3-border" style="width: 500px" name="name" type="text" placeholder="Client Name">
+                    <input class="w3-input w3-border" style="width: 500px" name="name" type="text" placeholder="Name">
                 </div>
             </div>
 
             <div class="w3-row w3-section" style="margin-left: 50px">
                 <div class="col" style="width: 200px; margin-bottom: 10px">
-                    <label>Account Number: </label>
+                    <label>Message: </label>
                 </div>
                 <div class="w3-rest">
-                    <input class="w3-input w3-border" style="width: 500px" name="account" type="text" placeholder="Account Number">
-                </div>
-            </div>
-
-            <div class="w3-row w3-section" style="margin-left: 50px">
-                <div class="col" style="width: 200px; margin-bottom: 10px">
-                    <label>Beneficiary Account Number: </label>
-                </div>
-                <div class="w3-rest">
-                    <input class="w3-input w3-border" style="width: 500px" name="beneficiary" type="text" placeholder="Beneficiary Number">
+                    <input class="w3-input w3-border" style="width: 500px" name="message" type="text" placeholder="Message">
                 </div>
             </div>
 
@@ -97,21 +97,22 @@
                 </div>
             </div>
 
-            <div class="w3-row w3-section" style="margin-left: 50px">
-                <div class="col" style="width: 150px; margin-bottom: 10px">
-                    <label>Reason for Transfer: </label>
-                </div>
-                <div class="w3-rest">
-                    <textarea class="w3-input w3-border" style="width: 500px" name="reasonTransfer" placeholder="Reason for Transfer"></textarea>
-                </div>
-            </div>
+<!--            <div class="w3-row w3-section" style="margin-left: 50px">-->
+<!--                <div class="col" style="width: 150px; margin-bottom: 10px">-->
+<!--                    <label>Reason for Transfer: </label>-->
+<!--                </div>-->
+<!--                <div class="w3-rest">-->
+<!--                    <textarea class="w3-input w3-border" style="width: 500px" name="reasonTransfer" placeholder="Reason for Transfer"></textarea>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <button type="button" id="btn-submit" class="w3-button w3-section w3-blue w3-ripple w3-padding">Submit</button>
+            <button type="button" id="btn-submit1" class="w3-button w3-section w3-blue w3-ripple w3-padding">Submit</button>
 
         </form>
     </div>
 </main>
 <script src="js/sidebar.js"></script>
 <script src="js/validate.js"></script>
+<script src="js/user-transfer.js"></script>
 </body>
 </html>
