@@ -58,24 +58,28 @@
 <main class="main" style="margin-left: 200px">
     <div class="homepage" style="padding: 20px">
         <table style="width: 100%; height: 100px">
+            <thead>
             <tr>
-                <th style="width: 10%">Date</th>
-                <th style="width: 30%">Transaction Type</th>
-                <th style="width: 30%">Description</th>
-                <th style="width: 15%">Transfer Amount</th>
-                <th style="width: 15%">Account Balance</th>
+                <th style="width: 15%">Created At</th>
+                <th style="width: 35%">Message</th>
+                <th style="width: 25%">Amount</th>
+                <th style="width: 25%">Recipient</th>
             </tr>
-            <tr>
-                <td>01/03/2022</td>
-                <td>Transfer</td>
-                <td>Transfer money from 0123**** to 0112****</td>
-                <td>500.000</td>
-                <td>2.500.000</td>
-            </tr>
+            </thead>
+            <tbody id="my-table-data">
+<!--            <tr>-->
+<!--                <td>01/03/2022</td>-->
+<!--                <td>Transfer</td>-->
+<!--                <td>Transfer money from 0123**** to 0112****</td>-->
+<!--                <td>500.000</td>-->
+<!--                <td>2.500.000</td>-->
+<!--            </tr>-->
+            </tbody>
         </table>
     </div>
 </main>
 <script src="js/sidebar.js"></script>
 <script src="js/validate.js"></script>
+<script src="js/user-history.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransactionDto {
-    private String buyerName;
+    private String buyerAccount;
     private double amount;
     private String message;
 }

@@ -2,7 +2,10 @@ package com.example.ejbass.config;
 
 import com.auth0.jwt.JWT;
 import com.example.ejbass.dto.AccountDto;
+import com.example.ejbass.entity.Account;
+import com.example.ejbass.service.AccountService;
 import com.google.gson.Gson;
+import org.springframework.context.ApplicationContext;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -17,13 +20,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class ApiAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private final AuthenticationManager authenticationManager;
+    
+    private final AccountService accountService;
 
-    public ApiAuthenticationFilter(AuthenticationManager authenticationManager) {
+    public ApiAuthenticationFilter(AuthenticationManager authenticationManager, ApplicationContext ctx) {
         this.authenticationManager = authenticationManager;
+        this.accountService = ctx.getBean(AccountService.class);
     }
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
@@ -55,8 +62,22 @@ public class ApiAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .withIssuer("t2004e_asm")
                 .withClaim("role", user.getAuthorities().iterator().next().getAuthority())
                 .sign(SecurityBean.algorithm());
+
+        String username = user.getUsername().toString();
+
+        Optional<Account> optionalAccount = accountService.findByUserName(username);
+        if (!optionalAccount.isPresent()) {
+            response.getWriter().println("Error");
+        }
+
+        Account account = optionalAccount.get();
         HashMap<String, String> map = new HashMap<>();
         map.put("access_token", accessToken);
+        map.put("username", account.getUsername());
+        map.put("email", account.getEmail());
+        map.put("phone", account.getPhone());
+        map.put("balance",String.valueOf(account.getBalance())  );
+        map.put("accountNumber",account.getAccountNumber());
         response.setContentType("application/json");
         response.getWriter().println(new Gson().toJson(map));
     }

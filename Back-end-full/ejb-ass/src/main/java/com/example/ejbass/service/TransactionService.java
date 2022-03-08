@@ -6,6 +6,7 @@ import com.example.ejbass.entity.Transaction;
 import com.example.ejbass.repository.AccountRepository;
 import com.example.ejbass.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,17 @@ public class TransactionService {
         Account senderAccount = accountRepository.findFirstByUsername(currentPrincipalName).orElse(null);
 
         // lấy ra tài khoản nhận
-        Account receiverAccount = accountRepository.findFirstByUsername(transactionDto.getBuyerName()).orElse(null);
+        Account receiverAccount = accountRepository.findFirstByUsername(transactionDto.getBuyerAccount()).orElse(null);
+        assert receiverAccount != null;
+
+        double transactionAmount = transactionDto.getAmount();
+        assert senderAccount != null;
+        if (senderAccount.getBalance() < transactionAmount) {
+            return null;
+        }
+
+        senderAccount.setBalance(senderAccount.getBalance() - transactionAmount);
+        receiverAccount.setBalance(receiverAccount.getBalance() + transactionAmount);
 
         Transaction transaction = new Transaction();
         transaction.setAmount(transactionDto.getAmount());
@@ -42,4 +53,5 @@ public class TransactionService {
 
         return transactionRepository.save(transaction);
     }
+
 }

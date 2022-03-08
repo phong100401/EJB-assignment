@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var btnSubmit = document.getElementById("btn-submit");
+    var btnSubmit = document.getElementById("btn-login");
     var username = document.forms['form-login']['username'];
     var password = document.forms['form-login']['password'];
 
@@ -15,9 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
             if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200){
                 var data = JSON.parse(xmlHttpRequest.responseText)
                 console.log(data)
-                localStorage.setItem("access_token", data.accessToken)
-                localStorage.getItem("access_token")
-                window.location.href = "../user-profile.html"
+                localStorage.setItem("access_token", data.access_token)
+                localStorage.setItem("username",data.username)
+                localStorage.setItem("phone", data.phone)
+                localStorage.setItem("email", data.email)
+                localStorage.setItem("balance", data.balance)
+                localStorage.setItem("accountNumber", data.accountNumber)
+                window.location.replace("http://localhost:63343/front/user-profile.html")
             }
         }
         xmlHttpRequest.open('post', 'http://localhost:8088/api/v1/accounts/login', true);

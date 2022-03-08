@@ -22,6 +22,10 @@ public class TransactionController {
     public ResponseEntity<Object> create(@RequestBody TransactionDto transactionDto) {
         Transaction transaction = transactionService.create(transactionDto);
 
+        if (transaction == null) {
+            return new ResponseEntity<>("Cannot execute the transaction", HttpStatus.BAD_REQUEST);
+        }
+
         return new ResponseEntity<>(transaction, HttpStatus.CREATED);
     }
 

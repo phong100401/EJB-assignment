@@ -43,7 +43,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // add authentication filter
-        ApiAuthenticationFilter apiAuthenticationFilter = new ApiAuthenticationFilter(authenticationManagerBean());
+        ApiAuthenticationFilter apiAuthenticationFilter = new ApiAuthenticationFilter(authenticationManagerBean(), getApplicationContext());
         apiAuthenticationFilter.setFilterProcessesUrl("/api/v1/accounts/login");
 
         http.cors().configurationSource(request -> {
@@ -59,7 +59,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/v1/accounts/register", "/api/v1/accounts/login").permitAll();
 
         http.authorizeHttpRequests()
-                .antMatchers("/api/v1/accounts/get", "/api/v1/transactions/get").permitAll();
+                .antMatchers("/api/v1/accounts/get", "/api/v1/transactions/get", "api/v1/loans").permitAll();
         http.authorizeHttpRequests().anyRequest().authenticated();
 
         http.addFilter(apiAuthenticationFilter);

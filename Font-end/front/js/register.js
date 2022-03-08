@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var btnSubmit = document.getElementById("btn-submit")
+    var btnSubmit = document.getElementById("btn-register")
     var userName = document.forms['form-register']['username']
     var password = document.forms['form-register']['password']
     var email = document.forms['form-register']['email']
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200){
                 var data = JSON.parse(xmlHttpRequest.responseText)
                 alert("Register success")
-                window.location.reload();
+                window.location.replace("http://localhost:63343/front/Login.html?_ijt=pat8toj2bra47uhmlcke00n01l&_ij_reload")
             }
         }
         xmlHttpRequest.open('post', 'http://localhost:8088/api/v1/accounts/register', false)
