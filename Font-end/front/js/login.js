@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 localStorage.setItem("email", data.email)
                 localStorage.setItem("balance", data.balance)
                 localStorage.setItem("accountNumber", data.accountNumber)
-                window.location.replace("http://localhost:63343/front/user-profile.html")
+                localStorage.setItem("id", data.id)
+                window.location.replace("http://localhost:63342/front/user-profile.html?_ijt=45iilh3dmr5pis28mcn219jpbm&_ij_reload")
             }
         }
         xmlHttpRequest.open('post', 'http://localhost:8088/api/v1/accounts/login', true);

@@ -76,8 +76,9 @@ public class ApiAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         map.put("username", account.getUsername());
         map.put("email", account.getEmail());
         map.put("phone", account.getPhone());
-        map.put("balance",String.valueOf(account.getBalance())  );
+        map.put("balance",String.valueOf(account.getBalance()));
         map.put("accountNumber",account.getAccountNumber());
+        map.put("id" , String.valueOf(account.getId()));
         response.setContentType("application/json");
         response.getWriter().println(new Gson().toJson(map));
     }

@@ -4,11 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.getItem("access_token")
     console.log(localStorage.getItem("access_token"))
     xmlHttpRequest.onreadystatechange = function () {
-        if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 201){
+        if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200){
             var data = JSON.parse(xmlHttpRequest.responseText);
             console.log(data);
             localStorage.getItem("access_token")
-            console.log(localStorage.getItem("access_token"))
             var newContent = '';
             for (let i = 0; i < data.length; i++) {
                 newContent += `<tr>
@@ -22,8 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    xmlHttpRequest.open('get', 'http://localhost:8088/api/v1/transactions/get', false);
-    xmlHttpRequest.setRequestHeader('Content-Type', 'application/json');
+    xmlHttpRequest.open('get', 'http://localhost:8088/api/v1/transactions/search?senderId=' + localStorage.getItem("id"), false);
     xmlHttpRequest.setRequestHeader('Accept', 'application/json')
     xmlHttpRequest.setRequestHeader('Authorization', localStorage.getItem("access_token"))
     xmlHttpRequest.send();

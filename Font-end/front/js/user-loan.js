@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function (){
                 var data = JSON.parse(xmlHttpRequest.responseText)
                 localStorage.getItem("access_token")
                 alert("Vay thành công vui lòng chờ 3 ngày để được chấp nhận khoản vay")
-                window.location.replace("http://localhost:63343/front/user-profile.html")
+                window.location.replace("http://localhost:63342/front/user-profile.html?_ijt=45iilh3dmr5pis28mcn219jpbm&_ij_reload")
             }
         }
         xmlHttpRequest.open('post','http://localhost:8088/api/v1/loans/create', false);

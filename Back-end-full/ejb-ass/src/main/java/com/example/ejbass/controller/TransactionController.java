@@ -35,4 +35,9 @@ public class TransactionController {
 
         return new ResponseEntity<>(transactionList, HttpStatus.CREATED);
     }
+
+    @RequestMapping(method = RequestMethod.GET, path = "search")
+    public ResponseEntity findListById(@RequestParam(name = "senderId") int senderId){
+        return transactionService.getListById(senderId);
+    }
 }

@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 201) {
                 var data = JSON.parse(xmlHttpRequest.responseText)
                 localStorage.getItem("access_token")
-                alert("Chuyển tiền thành công. Vui lòng login lại!!!")
+                alert("Chuyển tiền thành công")
                 var balance = localStorage.getItem("balance") - transferValue;
                 localStorage.setItem("balance",  balance);
-                window.location.replace("http://localhost:63343/front/user-profile.html")
+                window.location.replace("http://localhost:63342/front/user-profile.html?_ijt=45iilh3dmr5pis28mcn219jpbm&_ij_reload")
             }
         }
         xmlHttpRequest.open('post','http://localhost:8088/api/v1/transactions/create', false);
